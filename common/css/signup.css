@@ -1,0 +1,46 @@
+* { margin:0; padding:0; }
+a {text-decoration: none;}
+.blind { visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:0;height:0;font-size:0;line-height:0; padding:0; }
+footer {visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:0;height:0;font-size:0;line-height:0; padding:0;}
+button { cursor: pointer; border:0; color: white; }
+input { padding: 10px; }
+#signup_wrap  { width:100%; background:url("/common/images/rain.jpg") center;}
+.signup_main {max-width:1200px; height:100%; margin:0 auto;}
+.welcome {width:500px; height:150px; margin:0 auto; padding-top:35px; text-align: center; font-size:30px; color:#fff; font-family:"Arial";}
+.signup_pop {width:600px; height:700px; box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2); margin:0 auto; background: #fff; margin-bottom:60px;}
+
+.signup_pop_header {width:100%; height:75px; border-bottom:1px solid #ddd;}
+.signup_pop_header > p {text-align:center; line-height:75px; font-size:35px; color:#666;}
+
+
+.signup_pop_section {width:100%; height:625px; padding:25px;}
+.signup_pop_section p {margin-bottom:5px;}
+.signup_pop_section input{width:100%; height:50px; border:1px solid #ddd; background:#f9faf4; font-size:17px;}
+.signup_pop_section  p:nth-child(3) {margin-top:30px;}
+.member {width:100%; height:100px;}
+.member .name {width:100%;}
+.member .grade {width:100%;}
+.mem {width:100%; height:100px;}
+.mem:last-child {height:50px; padding-top:10px;}
+.mem_name {width:240px; height:100px; float: left;}
+.mem_grade {width:280px; height:100px; float: right;}
+
+.mem_id .id {width:480px; float: left;}
+.mem_id button {width:60px; height:50px; float: right; font-size:13px;}
+
+.mem .signup_btn {width:100%; height:50px; background:#3498db; font-size:17px;}
+
+.no_id {font-size:14px; color:#3498db; line-height:45px;}
+.no_id:hover {text-decoration:underline;}
+
+.error_pop {width:350px; height:250px; box-shadow:0 0 8px gray; position:absolute; left:0; right:0; top:0;bottom:0; margin:auto; background: #fff;}
+.error_head {width:100%; height:40px; border-bottom:1px solid #ddd;padding:8px;}
+.error_head p {color:#707070; float: left;}
+.error_head span {float: right; margin-right:10px; font-weight:bold; cursor:pointer;}
+#blind {width:100%; height:100%; background: #000; opacity:0.5; position: absolute; top: 0;}
+
+.msg { margin-left: 20px;}
+.error { height: 25px; margin-top: 4px;}
+
+.home {width:90px; height:35px; display: block; background:#95E0C8; text-align: center; color:#fff; font-size:17px; line-height:35px; float: right;} 
+.home:hover {background:#80c1ac;}
