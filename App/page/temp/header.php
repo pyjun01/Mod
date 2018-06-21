@@ -16,14 +16,17 @@
     <link rel="stylesheet" type="text/css" href="/common/css/library.css"/>
     <link rel="stylesheet" type="text/css" href="/common/css/manager.css">
     <link rel="stylesheet" type="text/css" href="/common/css/media.css">
-    
+
     <script src="/common/js/jquery.js"></script>
     <script src="/common/js/materialize.min.js"></script>
     <script src="/common/js/wirte_page.js"></script>
     <script src="/common/js/mobile.js"></script>
     <script src="/common/js/notice_view.js"></script>
     <script src="/common/js/script.js"></script>
-
+    <?php
+        if($dir=='library')
+            echo '<script src="/common/js/books_json.js"></script>';
+    ?>
     <script>
         var user_name= "<?php echo isset($_SESSION['name'])? $_SESSION['name']: ""; ?>";
         var user_id= "<?php echo isset($_SESSION['id'])? $_SESSION['id']: ""; ?>";
