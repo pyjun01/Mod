@@ -27,6 +27,15 @@
 				</div>
 				<div class="infor">
 					<div class="infor_header"><p>내가 대출한 도서 목록</p></div>
+					<div class="infor_content">
+						<?php
+						  $sql="SELECT book_name FROM books WHERE borrower_idx='{$_SESSION['user']['idx']}'";
+						  $row= query($sql);
+						  foreach ($row as $key => $value) {
+						  	echo "<a href='#'>{$value[0]}</a>";
+						  }
+						?>
+					</div>
 					<div class="infor_content"></div>
 				</div>
 				<div class="infor">
