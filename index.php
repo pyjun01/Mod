@@ -4,17 +4,23 @@
 
     $request_uri = $_SERVER['REQUEST_URI'];//url뒤에 붙는거 ex:localhost/a/a = /a/a
 
-    // if($dir=="gsp"&&!isset($_SESSION['id'])){
-    //     alert('잘못된 접근입니다.');
-    //     location('/user/login');
-    // }
+    if($dir=='board'){
+        $board= isset($get[2])? $get[2]: null;
+        include_once($_SERVER['DOCUMENT_ROOT']."/App/page/temp/header.php");
+        include_once($_SERVER['DOCUMENT_ROOT']."/App/page/gsp/gsp.php");
+        include_once($_SERVER['DOCUMENT_ROOT']."/App/page/temp/footer.php");
+        exit;
+    }
     if(!is_file($_SERVER['DOCUMENT_ROOT']."/App/page/{$dir}/{$page}.php")){
-        alert('404');
+        include_once($_SERVER['DOCUMENT_ROOT']."/App/page/temp/404.php");
         exit;
     }
     if($request_uri != "/manager/user_connect" && $page!='action')
     include_once($_SERVER['DOCUMENT_ROOT']."/App/page/temp/header.php");
+
     include_once($_SERVER['DOCUMENT_ROOT']."/App/page/{$dir}/{$page}.php");//section 연결
+
     if($request_uri != "/manager/user_connect" && $page!='action')
     include_once($_SERVER['DOCUMENT_ROOT']."/App/page/temp/footer.php");
 ?>
+<!-- idx, title, contents, name, date, hit -->

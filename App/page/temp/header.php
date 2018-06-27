@@ -41,6 +41,7 @@
         ?$h= "class='h_main'"
         :$h= "";
 ?>
+<!-- <img src='../common/images/success.png' alt='success' class='pop_icon' /> -->
 <div id="wrap">
     <header <?= $h ?>>
         <div class="header_wrap">
@@ -62,7 +63,10 @@
                 </li>
                 <li><a class="h_link" href="/introduce/greetings">인사말</a></li>
                 <li><a class="h_link" href="/introduce/intro">동아리소개</a></li>
-                <li><a class="h_link" href="/gsp/gsp">모드게시판</a></li>
+                <li>
+                    <a class="h_link" href="/gsp/gsp">모드게시판</a>
+                    
+                </li>
                 <li><a class="h_link" href="/notice/notice">공지사항</a></li>
                 <?php if(!isset($_SESSION["id"])){?>
                     <li><a class="h_link" href="/user/login">로그인</a></li>
