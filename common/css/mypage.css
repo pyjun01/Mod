@@ -8,16 +8,29 @@
 .infor_header {width:100%; height:50px; background:#efefef;}
 .infor_header p {text-align:center; line-height:50px; font-size:16px}
 .infor_content {width:100%; height:350px; padding:20px;}
-#board_add_form{
+
+#add_title {
     float:left;
-    margin-top:15px;
+    font-size: 40px;
 }
-#board_add{
-    /* float: left; */
-    height: 45px;
+#form_box {float: right;}
+
+#board_list {margin-top: 70px;margin-bottom:100px;}
+#list_text{margin-bottom:30px;}
+.lists_title{
+    width: 90%;height: 50px;
     line-height: 45px;
 }
-.pop_icon{
-    position: absolute;
-    z-index: 9999999999;
+.lists{
+    width: 90%;height: 45px;
+    font-size:17px;line-height:40px;
 }
+#board_list>div>div {
+    float: left;
+    overflow: hidden;
+    height: 100%;
+    white-space: nowrap;text-overflow: ellipsis;
+    text-align: center;
+}
+.board_list_title{width: 70%;}
+.board_list_master {width:30%;}
