@@ -1,29 +1,11 @@
 <?php
-	if($dir!='gsp'){
-		if($page=='board'){
-			$name="게시판 리스트";
-		}else{
-			$sql="SELECT * FROM board_list WHERE board_master='{$page}'";
-			$row=query($sql);
-			if($row->rowcount()>1){
-				$name= $page." 게시판";
-			}
-			if($board==null){
-				echo "a";
-			}else{
-				echo $board;
-			}
-		}
-	}else{
-		$sql = "SELECT * FROM noticeboard ORDER BY idx DESC";
-		$result = query($sql);
-		$name= "모드 게시판";
-	}
+	$sql = "SELECT * FROM noticeboard ORDER BY idx DESC";
+	$result = query($sql);
 ?>
 <section class="board_section">
 	<article class="board_main mains">
 		<div class="board_header board_box">
-			<p><?= $name ?><br><span class="amp">자유롭게 글을 써보세요!</span></p>
+			<p>모드 게시판<br><span class="amp">자유롭게 글을 써보세요!</span></p>
 		</div>
 		<table class="striped centered">
 			<thead>

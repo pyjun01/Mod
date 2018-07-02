@@ -4,10 +4,23 @@
 
     $request_uri = $_SERVER['REQUEST_URI'];//url뒤에 붙는거 ex:localhost/a/a = /a/a
 
+    if(isset($_POST['action'])&&$_POST['action']=='write'){
+        include_once($_SERVER['DOCUMENT_ROOT']."/App/page/board/writerequest.php");
+        exit;
+    }
     if($dir=='board'){
         $board= isset($get[2])? $get[2]: null;
         include_once($_SERVER['DOCUMENT_ROOT']."/App/page/temp/header.php");
-        include_once($_SERVER['DOCUMENT_ROOT']."/App/page/gsp/gsp.php");
+        include_once($_SERVER['DOCUMENT_ROOT']."/App/page/board/board.php");
+        include_once($_SERVER['DOCUMENT_ROOT']."/App/page/temp/footer.php");
+        exit;
+    }else if($dir=='write'){
+        $board= isset($get[2])? $get[2]: null;
+        if($board==null){
+            location('/');
+        }
+        include_once($_SERVER['DOCUMENT_ROOT']."/App/page/temp/header.php");
+        include_once($_SERVER['DOCUMENT_ROOT']."/App/page/board/write.php");
         include_once($_SERVER['DOCUMENT_ROOT']."/App/page/temp/footer.php");
         exit;
     }
