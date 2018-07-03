@@ -1,9 +1,8 @@
 <?php
     $sql= "SELECT * FROM board_list WHERE board_name='{$board}' AND board_owner='{$page}'";
     $row= query($sql);
-    if($row->rowcount()==0){
+    if($row->rowcount()==0)
         location('/');
-    }else{
 ?>
 <section class="board write_board">
 	<div class="write_main">
@@ -35,8 +34,3 @@
 		</article>
 	</div>
 </section>
-
-
-<?php
-    }
-?>
