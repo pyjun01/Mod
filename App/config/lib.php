@@ -8,7 +8,7 @@
         return $row;
     }
     function alert($t){
-        echo "<script>alert('{$t}');</script>";
+        echo "<script>alert({$t});</script>";
     }
     function location($l=null){
         if($l==null)

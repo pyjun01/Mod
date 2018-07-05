@@ -14,7 +14,7 @@
                         echo "<a href='/board/{$value['name']}'>{$value['name']}</a>";
                     }
                 }else if($page!='board'&&$board==null){// 관리자 이름만 있으면
-                    
+
                     $sql= "SELECT * FROM user WHERE user_level=1 AND name='{$page}'";//관리자인지 찾아봄
                     $row= query($sql);
 
@@ -57,24 +57,21 @@
                                     <th>조회</th>
                                 </tr>
                             </thead>
-                            <tbody>"; 
-                                foreach ($row as $key => $value): 
+                            <tbody>";
+                                foreach ($row as $key => $value):
+									$time= explode(" ", $value["date"]);
                                     echo "<tr>
                                         <td>{$value['idx']}</td>
                                         <td>
-                                            <a href='/gsp/view?idx={$value['idx']}' class='title'>
+                                            <a href='/{$value['idx']}' class='title'>
                                                 {$value['title']}
                                             </a>
                                         </td>
                                         <td>{$value['name']}</td>
-                                        <td>";
-                                            $time =  explode(" ", $value["date"]);
-                                            echo $time[0];
-                                        echo "
-                                        </td>
+                                        <td>{$time[0]}</td>
                                         <td>{$value['hit']}</td>
                                     </tr>";
-                                    endforeach; 
+                                    endforeach;
                         echo "
                             </tbody>
                         </table>
@@ -87,6 +84,6 @@
                 }
 
             ?>
-		
+
 	</article>
 </section>
