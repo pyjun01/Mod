@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="/common/css/library.css"/>
     <link rel="stylesheet" type="text/css" href="/common/css/manager.css">
     <link rel="stylesheet" type="text/css" href="/common/css/media.css">
+    <link rel="stylesheet" type="text/css" href="/common/css/board.css">
 
     <script src="/common/js/jquery.js"></script>
     <script src="/common/js/materialize.min.js"></script>
@@ -36,12 +37,7 @@
 
 </head>
 <body>
-<?php
-    $page=="main"
-        ?$h= "class='h_main'"
-        :$h= "";
-?>
-<!-- <img src='../common/images/success.png' alt='success' class='pop_icon' /> -->
+<?php $page=="main"? $h= "class='h_main'": $h= "";?>
 <div id="wrap">
     <header <?= $h ?>>
         <div class="header_wrap">
@@ -64,8 +60,8 @@
                 <li><a class="h_link" href="/introduce/greetings">인사말</a></li>
                 <li><a class="h_link" href="/introduce/intro">동아리소개</a></li>
                 <li>
-                    <a class="h_link" href="/gsp/gsp">모드게시판</a>
-                    
+                    <a class="h_link" href="/board">게시판</a>
+
                 </li>
                 <li><a class="h_link" href="/notice/notice">공지사항</a></li>
                 <?php if(!isset($_SESSION["id"])){?>

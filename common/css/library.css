@@ -125,8 +125,13 @@ footer {clear: both;}
 .book_text_box>.borrow_info{
     margin-top:10px;
 }
+.infor_content>p:hover>a{display: inline;}
+.infor_content>p>a{
+    display: none;
+    color: #f00;font-size: 15px;font-weight: bold;
+}
 /* .book_text_box li{
-    /* list-style-type: disc; */
-    float:left;
+list-style-type: disc;
+float:left;
 } */
 /* //YJ */

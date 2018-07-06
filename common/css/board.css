@@ -1,0 +1,10 @@
+.owner_name{font-size:40px;margin-bottom: 15px;}
+.owner_name>span{cursor: pointer;user-select: none;}
+.owner_name>ul{margin-top:7px;overflow: hidden;transition: 0.4s;height: auto;}
+.owner_name>ul>.board_name{
+    font-size:18px;padding-left: 30px;
+    list-style-type: disc;list-style-position: inside;
+}
+.owner_name>ul>.board_name>a{margin-left:-10px;user-select: none;}
+
+ul.no{height:0;}

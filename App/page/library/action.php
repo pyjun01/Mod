@@ -8,7 +8,6 @@
         Check(true);
     }else{
         $sql= "UPDATE books SET borrow='yes', borrower_idx='{$_SESSION['user']['idx']}' WHERE idx='{$_GET['idx']}'";
-        echo $sql;
         query($sql);
         location('/library/library');
     }

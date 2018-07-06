@@ -1,5 +1,5 @@
 <?php
-    if(empty($_POST['user'])){
+    if(empty($_POST['user_name'])||empty($_POST['user_id'])){
         location('/');
     }
     $user_name = $_POST['user_name'];

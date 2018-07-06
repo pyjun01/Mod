@@ -1,5 +1,8 @@
 <?php
     Check('',"잘못된 접근입니다.");
+    if($_SESSION['user']['user_level']!=1){
+        location();
+    }
  ?>
 <section>
     <div class="box" style="padding-top:70px;">
@@ -29,7 +32,7 @@
                 $row= query($sql);
                 foreach ($row as $key => $value) {
                     $bname= $value['board_name'];
-                    $uname= $value['board_master'];
+                    $uname= $value['board_owner'];
                     echo "
                     <div class='lists'>
                         <div class='board_list_title'>
