@@ -8,7 +8,7 @@
         return $row;
     }
     function alert($t){
-        echo "<script>alert({$t});</script>";
+        echo "<script>alert('{$t}');</script>";
     }
     function location($l=null){
         if($l==null)
@@ -17,12 +17,23 @@
             echo "<script>location.replace('{$l}');</script>";
         exit;
     }
+    function SessionCheck($msg='로그인 후 이용해주세요.'){
+        if(!isset($_SESSION['id'])){
+            alert($msg);
+            location('/user/login');
+        }
+    }
+    function LoginCheck(){
+        if(isset($_SESSION['id'])){
+            location('/');
+        }
+    }
     function Check($tf= false,$t= '로그인 후 이용해주세요.',$l= '/user/login'){
         if($tf){
-            alert("잘못된 접근입니다.");
+            alert('잘못된 접근입니다.');
             location();
         }else{
-            if(!isset($_SESSION["id"])){
+            if(!isset($_SESSION['id'])){
                 alert($t);
                 location($l);
             }

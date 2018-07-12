@@ -6,7 +6,7 @@
     <title>MOD - 서울디지텍고등학교 웹디자인 동아리</title>
 
     <link rel="shortcut icon" href="/common/images/favicon.ico" type="image/x-icon"><!-- favicon -->
-    <link rel="stylesheet" href="/common/css/materialize.min.css"><!-- 버튼 효과여기 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"><!-- 버튼 효과여기 -->
     <link rel="stylesheet" type="text/css" href="/common/css/desktop.css"/>
     <link rel="stylesheet" type="text/css" href="/common/css/gsp.css"/>
     <link rel="stylesheet" type="text/css" href="/common/css/intro.css"/>

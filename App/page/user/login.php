@@ -1,3 +1,6 @@
+<?php 
+  LoginCheck();
+?>
 <section id="login" class="user">
   <div class="form_box">
     <h2>MOD 로그인</h2>

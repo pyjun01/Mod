@@ -21,7 +21,7 @@
 					<div class="infor_header"><p>최근 내가 쓴 글</p></div>
 					<ul class="infor_content">
 					<?php foreach ($row as $key => $value):?>
-						<li><a href="/gsp/view?idx=<?=$value["idx"]?>"><?=$value["title"]?></a></li>
+						<li><a href="/<?=$value["idx"]?>"><?=$value["title"]?></a></li>
 					<?php endforeach; ?>
 					</ul>
 				</div>

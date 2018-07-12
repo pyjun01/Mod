@@ -29,7 +29,8 @@
 </script>
 
 <?php
-	Check('','잘못된 접근입니다.');
+	SessionCheck();
+	// Check('','잘못된 접근입니다.');
 	$sql= "SELECT * FROM books ORDER BY idx ASC";
 	$row= query($sql);
 	foreach ($row as $key => $value) {

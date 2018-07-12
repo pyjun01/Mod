@@ -7,16 +7,32 @@
     $sql= "SELECT * FROM board_list WHERE board_name='{$board}' AND board_owner='{$owner}'";
     $row= query($sql);
     if($row->rowcount()>0){
-        $title= $_POST['title'];
-        $contents= $_POST['area'];
+        $title= htmlspecialchars($_POST['title']);
+        $contents= htmlspecialchars($_POST['area']);
         $name= $_SESSION['user']['name'];
         $date= date('Y-m-d H:i:s');
-        $sql= "INSERT INTO board SET title='{$title}', contents='{$contents}', name='{$name}', date='{$date}', hit='0', board_owner='{$owner}', board_name='{$board}'";
-        $row= query($sql);
+        $sql= "INSERT INTO board SET title=:title, contents=:contents, name=:name, date=:date, hit='0', board_owner=:owner, board_name=:board";
+        $row=$db->prepare($sql);
+    	$row->bindparam(":title",$title);
+    	$row->bindparam(":contents",$contents);
+        $row->bindparam(":name",$name);
+        $row->bindparam(":date",$date);
+        $row->bindparam(":owner",$owner);
+        $row->bindparam(":board",$board);
+    	$row->execute();
 
         $sql= "SELECT * FROM board WHERE title='{$title}' AND contents='{$contents}' AND name='{$name}' AND date='{$date}' AND board_owner='{$owner}' AND board_name='{$board}'";
-        $row= query($sql)->fetch();
-        $post_idx= $row['idx'];
+        $row=$db->prepare($sql);
+    	$row->bindparam(":title",$title);
+    	$row->bindparam(":contents",$contents);
+        $row->bindparam(":name",$name);
+        $row->bindparam(":date",$date);
+        $row->bindparam(":owner",$owner);
+        $row->bindparam(":board",$board);
+    	$row->execute();
+
+        $result= $row->fetch();
+        $post_idx= $result['idx'];
         if(isset($_FILES) && !empty($_FILES['file']['name'])){
 
             $array_name= explode('.', $_FILES['file']['name']);
@@ -33,6 +49,7 @@
             $upload_file = $hash.".".$file_extension;//파일 해쉬 이름
 
             $upload_dir = $dir.$upload_file;//full dir
+            echo $upload_dir;
 
             if(is_uploaded_file($_FILES['file']['tmp_name'])){// 업로드
                 if(!move_uploaded_file($_FILES['file']['tmp_name'],$upload_dir)){// 업로드
@@ -40,8 +57,11 @@
                     exit;
                 }
             }
-            $sql= "INSERT INTO board_file SET file_name= '{$file_name}', file_extension='{$file_extension}', hash= '{$hash}', post_idx='{$post_idx}', down=0, date='{$date}'";
-            $row= query($sql);
+            $sql= "INSERT INTO board_file SET file_name= :file_name, file_extension=:file_extension, hash= '{$hash}', post_idx='{$post_idx}', down=0, date='{$date}'";
+            $row=$db->prepare($sql);
+        	$row->bindparam(":file_name",$file_name);
+            $row->bindparam(":file_extension",$file_extension);
+            $row->execute();
             if($row){
                 location("/{$post_idx}");
             }else{

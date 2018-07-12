@@ -3,22 +3,40 @@
 		<div class="board_header board_box">
 			<?php
 				if($page=='board'&&$board==null){// $dir만 보드고 나머지 없으면
-					$sql= "SELECT * FROM user WHERE user_level=1";
-					$row= query($sql);
-					echo "<ul>";
-						foreach ($row as $key => $value) {
-							$sql="SELECT * FROM board_list WHERE board_owner='{$value['name']}' ORDER BY idx DESC";
-							$list= query($sql);
-							echo "<li class='owner_name'>";
-							echo "<span>{$value['name']}</span>";
-							echo "<ul>";
-							foreach ($list as $key => $list_value) {
-								echo "<li class='board_name'><a href='/board/{$value['name']}/{$list_value['board_name']}'>{$list_value['board_name']}</a></li>";
-							}
-							echo "</ul>";
-							echo "</li>";
-						}
-					echo "</ul>";
+					
+				?>
+				<table class='highlight centered'>
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>담당자</th>
+							<th>제목</th>
+							<th>날짜</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+							$i = 1;
+							$sql= "SELECT * FROM board_list ORDER BY idx DESC";
+							$row= query($sql);
+							foreach ($row as $key => $value) {?>
+							<tr>
+								<td><?=$i?></td>
+								<td><?=$value['board_owner']?></td>
+								<td>
+								<?php 									
+									echo "<a href='/board/{$value['board_owner']}/{$value['board_name']}'>{$value['board_name']}</a>";									
+								?>
+								</td>
+								<td><?=$value['wdate']?></td>
+							</tr>
+							<?php 
+							$i++;
+							}		
+						?>						
+					</tbody>
+				</table>
+				<?php 
 				}else if($page!='board'&&$board==null){// 관리자 이름만 있으면
 					$sql= "SELECT * FROM user WHERE user_level=1 AND name='{$page}'";//관리자인지 찾아봄
 					$row= query($sql);
@@ -58,21 +76,27 @@
 								</tr>
 							</thead>
 						<tbody>";
+						$i = 1;
 					foreach ($row as $key => $value):
 					$time= explode(" ", $value["date"]);
 					echo "<tr>
-							<td>{$value['idx']}</td>
+							<td>{$i}</td>
 							<td><a href='/{$value['idx']}' class='title'>{$value['title']}</a></td>
 							<td>{$value['name']}</td>
 							<td>{$time[0]}</td>
 							<td>{$value['hit']}</td>
 						</tr>";
+						$i++;
 					endforeach;
-					echo "</tbody>
+					?>
+					</tbody>
 						</table>
-						<div class='board_footer board_box '><a href='/write/{$page}/{$board}' class='waves-effect waves-light btn'>글쓰기</a></div>";
+						<?php if(isset($_SESSION['id'])){?>
+						<div class='board_footer board_box'><a href='/write/<?=$page?>/<?=$board?>' class='waves-effect waves-light btn'>글쓰기</a></div>
+						<?php }?>
+					<?php
 					}else{
-						location('/');
+						// location('/');
 					}
 				}
 			?>

@@ -21,6 +21,9 @@
         case 'delete':
             include_once($_SERVER['DOCUMENT_ROOT']."/App/page/board/delete.php");
             break;
+        case 'downRequest':
+            include_once($_SERVER['DOCUMENT_ROOT']."/App/page/board/downRequest.php");
+            break;
         default:
             location('/');
             break;
