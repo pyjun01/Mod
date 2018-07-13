@@ -1,5 +1,5 @@
 /* 동아리 소개 페이지 */
-.intro_section {width:100%; }
+.intro_section {width:100%; height: auto;}
 .intro_mimg { width:100%; height:300px; background:#3498db;  background:url("/common/images/d2.jpg")center; background-size:cover; position: relative; }
 .intro_main {width:1200px; height:100%;  margin:0 auto; }
 .intro_header {width:100%; height:200px; padding-top:60px;}

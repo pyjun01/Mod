@@ -111,7 +111,7 @@ function id_val(str){
 		alert("아이디가 형식에 맞지 않습니다.");
 		return false;
 	}
-	$.post("/page/user/member.php", { id: str }, function(data) {
+	$.post("/App/page/user/member.php", { id: str }, function(data) {
 		if(data== "false"){
 			alert("중복된 아이디 입니다.");
             $(".ck_btn").css("background","#e74c3c");

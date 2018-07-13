@@ -1,8 +1,10 @@
-@font-face {font-family:"noto"; src:url("../../fonts/NotoSansKR-Regular-Hestia.woff");}
+@font-face {font-family:"noto"; src:url("../fonts/NotoSansKR-Regular-Hestia.woff");}
 *{margin:0; padding:0; box-sizing: border-box; font-family:"noto"; color:#333;}
 h1 , h2, h3 ,h4 ,h5 ,h6{ margin:0;  }
-body,html {width:100%;  height:auto; position: relative;}
-
+body,html {width:100%;  height:100%; position: relative;}
+#wrap{width:100%;height: 100%;}
+/* section{height: 100%;} */
+section{min-height: 787px;}
 .clear { clear: both;}
 .mains {display: none;}
 .input-field.col label { left:0; }
@@ -20,13 +22,13 @@ body,html {width:100%;  height:auto; position: relative;}
 .msg { margin-left: 20px;}
 .error { height: 25px; margin-top: 4px;}
 input[type=text] { border-bottom:1px solid #ddd; }
-#wrap { width:100%; overflow: hidden; }
+
 /*---------header----------*/
 
 header {width: 100%; height: 70px; background:#333; }
 .h_main { background-color:rgba(0,0,0,.6); position: absolute; top:0; }
 .header_wrap {max-width: 1200px; height: 100%; margin: auto;}
-.logo, .logo > a {display: inline-block; height: 70px; line-height: 70px; color:#fff; text-decoration: none; opacity:0; transition:0.8s; position: relative; top:15px; margin:0; }
+.logo, .logo > a {display: inline-block; height: 70px; line-height: 70px; color:#fff; text-decoration: none; opacity:0; transition:0.8s; position: relative; top:15px; margin:0; font-size: 1.5em;}
 .logo img { margin-top: 20px;}
 .header_menu { float:right; list-style: none; }
 .header_menu > li, .h_link  { display: block; width: 100px; height: 70px; float:left; text-decoration: none; color: black; font-size: 14px; text-align: center; line-height: 75px; transition:background .3s; color:#fff; }
@@ -102,7 +104,7 @@ header {width: 100%; height: 70px; background:#333; }
 /*-----------library-----------*/
 
 .main_library { width: 100%; height:700px; }
-.library_wrap { max-width: 1200px; height: 100%; margin: auto; }
+.library_wrap { max-width: 1200px; margin: auto; }
 .library_title { text-align: center; padding-top: 50px; color: #707070; }
 
 .library_discript {width: 50%; float:left; margin-top: 80px;}
